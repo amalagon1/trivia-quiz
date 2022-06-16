@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    /* background: url('./images/ww2-background.jpeg') center/cover no-repeat; */
+    background: linear-gradient(56deg, rgba(33,108,27,0.9346332282913166) 0%, rgba(9,74,121,1) 37%, rgba(23,0,255,1) 100%);
+}
+
+.timer {
+    margin-bottom: 40px;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    /* margin-top: 10px ; */
+    padding: 10px 70px;
+    display: none;
+    justify-content: space-between;
+    
+}
+
+.icon img{
+    width: 10rem;
+    /* animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; */
+}
+
+/* @keyframes spin {
+    from{
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+} */
+
+#score{
+    padding-left: 5px;
+}
+
+.header h2 {
+    color: #fff;
+}
+#game-header {
+    text-align: center;
+    position: relative;
+    bottom: 20%;
+    color: #fff;
+    padding: 3rem;
+}
+
+#game-header h1 {
+    margin-bottom: 3.5rem;
+}
+
+.container {
+    border: solid green 2px;
+    width: 600px;
+    height: 250px;
+    max-width: 80%;
+    border-radius: 7px;
+    background-color:white;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+    display: none;
+}
+
+#question {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 2.5rem;
+}
+
+.answers {
+    display: flex;
+    justify-content: space-between;
+}
+
+#start-btn {
+    width: 200px;
+    height: 80px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 2px;
+    font-size: 2.3rem;
+    background-color: #228B22;
+    cursor: pointer;
+}
+
+#start-btn:hover {
+    color: #b22222;
+}
+
+#question-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.answer-btn {
+    width: 135px;
+    height: 3rem;
+    background-color: #1D50CC;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.1s;
+    font-size: 1rem;
+}
+
+.answer-btn:hover{
+color: firebrick;
+height: 3.5rem;
+width: 115px;
+}
+
+
+.hide{
+    display: none !important;
+}
