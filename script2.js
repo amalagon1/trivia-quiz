@@ -38,11 +38,13 @@ const answersEl = document.querySelector('.answers');
 const header = document.getElementById('game-header');
 const mainHeaderEl = document.querySelector('.header')
 const container = document.querySelector('.container');
-const question = document.getElementById('question')
-const answer1 = document.getElementById('answer1')
-const answer2 = document.getElementById('answer2')
-const answer3 = document.getElementById('answer3')
-const answer4 = document.getElementById('answer4')
+const question = document.getElementById('question');
+const answer1 = document.getElementById('answer1');
+const answer2 = document.getElementById('answer2');
+const answer3 = document.getElementById('answer3');
+const answer4 = document.getElementById('answer4');
+const gameOver = document.querySelector('.game-over');
+const endScore = document.getElementById('end-score')
 
 currentQuestionIndex = 0
 score = 0
@@ -91,11 +93,13 @@ answersEl.addEventListener("click", function (e) {
 const checkAnswer = (response) => {
 
     if (response === questions[currentQuestionIndex - 1].answer) {
-        window.alert('CORRECT!')
+        // window.alert('CORRECT!')
         score = score + 10
         scoreEl.innerText = score;
     } else {
-        window.alert('INCORRECT!')
+        score = score - 5
+        scoreEl.innerText = score;
+        // window.alert('INCORRECT!')
     }
 
     console.log(score)
@@ -105,7 +109,11 @@ const checkAnswer = (response) => {
 
 
 endGame = () => {
-    window.alert('GAME OVER')
+    mainHeaderEl.style.display = 'none';
+    container.style.display = 'none';
+    gameOver.style.display = 'block';
+    endScore.innerText = score;
+
 }
 
 
