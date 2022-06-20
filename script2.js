@@ -44,7 +44,9 @@ const answer2 = document.getElementById('answer2');
 const answer3 = document.getElementById('answer3');
 const answer4 = document.getElementById('answer4');
 const gameOver = document.querySelector('.game-over');
-const endScore = document.getElementById('end-score')
+const endScore = document.getElementById('end-score');
+const scorebtn = document.getElementById('view-score');
+const initialEl = document.getElementById('initials');
 
 currentQuestionIndex = 0
 score = 0
@@ -114,6 +116,11 @@ endGame = () => {
     gameOver.style.display = 'block';
     endScore.innerText = score;
 
+    scorebtn.addEventListener('click', () => {
+        window.alert('you clicked me')
+        let initial = initialEl.value
+        localStorage.setItem(initial, score)
+    });
 }
 
 
