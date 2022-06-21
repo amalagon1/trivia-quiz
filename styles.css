@@ -150,7 +150,9 @@ width: 115px;
     border-radius: 4px;
     border: transparent;
 }
-
+.scoreText{
+    background-color: red;
+}
 .game-over__items div {
    margin-top: 3rem;
 }

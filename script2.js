@@ -47,6 +47,10 @@ const gameOver = document.querySelector('.game-over');
 const endScore = document.getElementById('end-score');
 const scorebtn = document.getElementById('view-score');
 const initialEl = document.getElementById('initials');
+const scoreTextEl = document.querySelector('.scoreText');
+const timeEl = document.getElementById('seconds');
+
+var sec = 100;
 
 currentQuestionIndex = 0
 score = 0
@@ -55,15 +59,16 @@ score = 0
 start.onclick = startGame
 
 function startGame() {
+
     start.style.display = 'none';
     header.style.display = 'none';
     mainHeaderEl.style.display = 'flex';
     container.style.display = 'block';
 
-    renderQuestion()
+    startTimer();
+    renderQuestion();
 
 }
-
 
 
 const renderQuestion = () => {
@@ -99,6 +104,7 @@ const checkAnswer = (response) => {
         score = score + 10
         scoreEl.innerText = score;
     } else {
+        sec = sec - 5
         score = score - 5
         scoreEl.innerText = score;
         // window.alert('INCORRECT!')
@@ -117,10 +123,35 @@ endGame = () => {
     endScore.innerText = score;
 
     scorebtn.addEventListener('click', () => {
-        window.alert('you clicked me')
+        let highScores = []
         let initial = initialEl.value
-        localStorage.setItem(initial, score)
+        let highScore = { username: initial, score: score }
+        highScores.push(highScore)
+        localStorage.setItem("highScores", JSON.stringify(highScores));
+        var storage = JSON.parse(localStorage.getItem("highScores"));
+        // console.log(storage)
+        // scoreTextEl.innerText = storage[0].username;
+        console.log(storage[0].username)
+        scoreTextEl.innerText = storage[0].username + ': ' + storage[0].score;
     });
 }
 
+// var storage = JSON.parse(localStorage.getItem("highScores"));
+// console.log(storage)
 
+const startTimer = () => {
+
+    setInterval(function () {
+        timeEl.innerHTML = sec;
+        sec--;
+        if (sec == 00) {
+            window.alert("time's up!")
+            stopTimer()
+        }
+
+    }, 1000);
+}
+
+const stopTimer = () => {
+    clearInterval(interval);
+}
