@@ -50,8 +50,9 @@ const initialEl = document.getElementById('initials');
 const scoreTextEl = document.querySelector('.scoreText');
 const timeEl = document.getElementById('seconds');
 
-var sec = 100;
-
+var currentTime = timeEl.innerText
+console.log(currentTime)
+var sec = 30;
 currentQuestionIndex = 0
 score = 0
 
@@ -65,7 +66,7 @@ function startGame() {
     mainHeaderEl.style.display = 'flex';
     container.style.display = 'block';
 
-    startTimer();
+    // startTimer();
     renderQuestion();
 
 }
@@ -73,7 +74,7 @@ function startGame() {
 
 const renderQuestion = () => {
 
-    if (currentQuestionIndex < questions.length) {
+    if (currentQuestionIndex < questions.length && sec > 0) {
         question.innerText = questions[currentQuestionIndex].question;
         answer1.innerText = questions[currentQuestionIndex].choices[0];
         answer2.innerText = questions[currentQuestionIndex].choices[1];
@@ -111,12 +112,13 @@ const checkAnswer = (response) => {
     }
 
     console.log(score)
+    console.log(currentTime)
     renderQuestion()
 }
 
 
 
-endGame = () => {
+const endGame = () => {
     mainHeaderEl.style.display = 'none';
     container.style.display = 'none';
     gameOver.style.display = 'block';
@@ -136,22 +138,22 @@ endGame = () => {
     });
 }
 
-// var storage = JSON.parse(localStorage.getItem("highScores"));
-// console.log(storage)
-
 const startTimer = () => {
 
     setInterval(function () {
         timeEl.innerHTML = sec;
         sec--;
         if (sec == 00) {
+            // endgame()
             window.alert("time's up!")
             stopTimer()
+
         }
 
     }, 1000);
 }
 
+//need to fix stop timer function
 const stopTimer = () => {
-    clearInterval(interval);
+    clearInterval();
 }

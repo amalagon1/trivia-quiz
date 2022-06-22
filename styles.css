@@ -70,8 +70,7 @@ body {
 
 .container {
     border: solid green 2px;
-    width: 600px;
-    height: 250px;
+    width: 700px;
     max-width: 80%;
     border-radius: 7px;
     background-color:white;
@@ -87,8 +86,14 @@ body {
 }
 
 .answers {
-    display: flex;
-    justify-content: space-between;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    display: grid;
+    justify-items: center;
+    /* grid-template-areas: "first" "second"
+                            "third" "fourth"; */
+    grid-template-columns: repeat(2, auto);
+    gap: 15px;
 }
 
 #start-btn {
