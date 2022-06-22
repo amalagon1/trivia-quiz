@@ -88,11 +88,12 @@ body {
 .answers {
     /* display: flex; */
     /* justify-content: space-between; */
+    margin: auto;
     display: grid;
     justify-items: center;
     /* grid-template-areas: "first" "second"
                             "third" "fourth"; */
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 12rem);
     gap: 15px;
 }
 
