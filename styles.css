@@ -123,14 +123,12 @@ body {
     color: #fff;
     border-radius: 3px;
     cursor: pointer;
-    transition: 0.1s;
     font-size: 1rem;
 }
 
 .answer-btn:hover{
 color: firebrick;
-height: 3.5rem;
-width: 115px;
+transform:scale(1.2);
 }
 
 
@@ -171,4 +169,10 @@ width: 115px;
     font-size: 18px;
     background-color: #fff;
     cursor: pointer;
+}
+
+.scores li {
+    list-style: none;
+    background: rgb(64, 139, 224);
+    margin-top: 20px;
 }

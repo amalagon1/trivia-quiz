@@ -33,7 +33,7 @@
         <div id="question-container">
             <div id="question">""</div>
             <div class="answers">
-                <button id='answer1' class="answer-btn">Answer 1</button>
+                <button id='answer1' class="answer-btn">`a + {Answer 1}`</button>
                 <button id='answer2' class="answer-btn">Answer 2</button>
                 <button id='answer3' class="answer-btn">Answer 3</button>
                 <button id='answer4' class="answer-btn">Answer 4</button>
@@ -48,13 +48,21 @@
             <p>Your score is: <span id="end-score">""</span></p>
             <p>Enter your initials to view high scores</p>
             <input type="text" id="initials" placeholder="initals here">
-            <p class="scoreText">hello there</p>
+            <!-- <p class="scoreText">hello there</p> -->
             <div>
                 <button id="view-score">Submit</button>
             </div>
 
         </div>
 
+    </div>
+
+    <div id="score-div" style="display: none;">
+        <h1>High Scores</h1>
+        <ul class="scores">
+            <li id="endScore">hello</li>
+        </ul>
+        <button id="back-btn">Go Back</button>
     </div>
 
     <script src="script2.js"></script>

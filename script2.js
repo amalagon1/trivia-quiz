@@ -37,6 +37,7 @@ const scoreEl = document.getElementById('score');
 const answersEl = document.querySelector('.answers');
 const header = document.getElementById('game-header');
 const mainHeaderEl = document.querySelector('.header')
+// const container = document.getElementById('question-container');
 const container = document.querySelector('.container');
 const question = document.getElementById('question');
 const answer1 = document.getElementById('answer1');
@@ -47,8 +48,12 @@ const gameOver = document.querySelector('.game-over');
 const endScore = document.getElementById('end-score');
 const scorebtn = document.getElementById('view-score');
 const initialEl = document.getElementById('initials');
-const scoreTextEl = document.querySelector('.scoreText');
+// const scoreTextEl = document.querySelector('.scoreText');
+const scoreTextEl = document.getElementById('endScore');
 const timeEl = document.getElementById('seconds');
+const thing = document.getElementById('score-div');
+const backBtn = document.getElementById('back-btn');
+const realScore = document.querySelector('.score-text')
 
 var currentTime = timeEl.innerText
 console.log(currentTime)
@@ -66,7 +71,7 @@ function startGame() {
     mainHeaderEl.style.display = 'flex';
     container.style.display = 'block';
 
-    // startTimer();
+    startTimer();
     renderQuestion();
 
 }
@@ -76,10 +81,10 @@ const renderQuestion = () => {
 
     if (currentQuestionIndex < questions.length && sec > 0) {
         question.innerText = questions[currentQuestionIndex].question;
-        answer1.innerText = questions[currentQuestionIndex].choices[0];
-        answer2.innerText = questions[currentQuestionIndex].choices[1];
-        answer3.innerText = questions[currentQuestionIndex].choices[2];
-        answer4.innerText = questions[currentQuestionIndex].choices[3];
+        answer1.innerText = "a. " + questions[currentQuestionIndex].choices[0];
+        answer2.innerText = "b. " + questions[currentQuestionIndex].choices[1];
+        answer3.innerText = "c. " + questions[currentQuestionIndex].choices[2];
+        answer4.innerText = "d. " + questions[currentQuestionIndex].choices[3];
     } else {
         endGame()
     }
@@ -134,9 +139,26 @@ const endGame = () => {
         // console.log(storage)
         // scoreTextEl.innerText = storage[0].username;
         console.log(storage[0].username)
+
+        // location.href = "./scores.html"
         scoreTextEl.innerText = storage[0].username + ': ' + storage[0].score;
+        console.log(scoreTextEl)
+        gameOver.style.display = 'none';
+        thing.style.display = 'block';
+
+
+
+
     });
 }
+
+backBtn.addEventListener("click", () => {
+    thing.style.display = "none";
+    header.style.display = "block";
+    start.style.display = "block";
+    gameOver.style.display = "none";
+
+})
 
 const startTimer = () => {
 
