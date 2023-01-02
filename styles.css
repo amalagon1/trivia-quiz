@@ -14,7 +14,8 @@ body {
     width: 100vw;
     height: 100vh;
     /* background: url('./images/ww2-background.jpeg') center/cover no-repeat; */
-    background: linear-gradient(56deg, rgba(33,108,27,0.9346332282913166) 0%, rgba(9,74,121,1) 37%, rgba(23,0,255,1) 100%);
+    /* background: linear-gradient(56deg, rgba(33,108,27,0.9346332282913166) 0%, rgba(9,74,121,1) 37%, rgba(23,0,255,1) 100%); */
+    background-color: rgb(81, 65, 223);
 }
 
 .timer {
@@ -141,9 +142,11 @@ transform:scale(1.2);
     color: white;
     padding: 3rem;
     border-radius: 3px;
-    background-color: rgb(33,108,27);
-    font-size: 2.2rem;
+    /* background-color: rgb(33,108,27); */
+    background: firebrick;
+    font-size: 2rem;
     text-align: center;
+    width: 70%;
 
 }
 
@@ -175,4 +178,8 @@ transform:scale(1.2);
     list-style: none;
     background: rgb(64, 139, 224);
     margin-top: 20px;
+}
+
+#score-div {
+    background-color: firebrick;
 }

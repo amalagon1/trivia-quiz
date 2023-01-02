@@ -145,6 +145,10 @@ const endGame = () => {
         console.log(scoreTextEl)
         gameOver.style.display = 'none';
         thing.style.display = 'block';
+        // const finalScore = document.createElement('div')
+        // finalScore.innerHTML = storage[0].username + ': ' + storage[0].score;
+        // endScore.append(finalScore);
+
 
 
 
@@ -153,10 +157,7 @@ const endGame = () => {
 }
 
 backBtn.addEventListener("click", () => {
-    thing.style.display = "none";
-    header.style.display = "block";
-    start.style.display = "block";
-    gameOver.style.display = "none";
+    location.reload();
 
 })
 
@@ -166,9 +167,10 @@ const startTimer = () => {
         timeEl.innerHTML = sec;
         sec--;
         if (sec == 00) {
-            // endgame()
             window.alert("time's up!")
+            console.log('time is up')
             stopTimer()
+            endGame()
 
         }
 
@@ -177,5 +179,6 @@ const startTimer = () => {
 
 //need to fix stop timer function
 const stopTimer = () => {
+    console.log("stop timer")
     clearInterval();
 }
