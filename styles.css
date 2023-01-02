@@ -183,3 +183,10 @@ transform:scale(1.2);
 #score-div {
     background-color: firebrick;
 }
+
+@media(max-width: 400px){
+    .answers{
+        display: flex;
+        flex-direction: column;
+    }
+}

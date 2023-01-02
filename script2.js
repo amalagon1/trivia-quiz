@@ -71,7 +71,7 @@ function startGame() {
     mainHeaderEl.style.display = 'flex';
     container.style.display = 'block';
 
-    startTimer();
+    // startTimer();
     renderQuestion();
 
 }
