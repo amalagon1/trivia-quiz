@@ -71,7 +71,7 @@ function startGame() {
     mainHeaderEl.style.display = 'flex';
     container.style.display = 'block';
 
-    // startTimer();
+    startTimer();
     renderQuestion();
 
 }
@@ -167,9 +167,10 @@ const startTimer = () => {
         timeEl.innerHTML = sec;
         sec--;
         if (sec == 00) {
+            stopTimer()
             window.alert("time's up!")
             console.log('time is up')
-            stopTimer()
+
             endGame()
 
         }
@@ -180,5 +181,5 @@ const startTimer = () => {
 //need to fix stop timer function
 const stopTimer = () => {
     console.log("stop timer")
-    clearInterval();
+    clearInterval(startTimer);
 }
